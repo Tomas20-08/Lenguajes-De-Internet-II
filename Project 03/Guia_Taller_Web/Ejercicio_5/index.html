@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Soluciones empresariales digitales">
+  <title>Nexa Digital</title>
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+  <div class="header">
+    <nav class="nav">
+      <a href="#inicio" class="logo">NEXA<span>.</span></a>
+
+      <div class="menu">
+        <a href="#inicio">Inicio</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#contacto">Contacto</a>
+        <button id="tema" type="button" class="tema">🌙</button>
+      </div>
+    </nav>
+  </div>
+
+  <section class="hero">
+    <div>
+      <span class="etiqueta">SOLUCIONES DIGITALES</span>
+      <h1>Transformamos ideas en experiencias digitales.</h1>
+      <p>Diseño y tecnología para empresas que quieren crecer.</p>
+      <p id="saludo" class="saludo"></p>
+      <a href="#contacto" class="cta">Solicitar asesoría</a>
+    </div>
+
+    <img src="img/equipo.jpg" alt="Equipo empresarial">
+  </section>
+
+  <section class="servicios" id="servicios">
+    <header>
+      <span>SERVICIOS</span>
+      <h2>Soluciones para tu empresa</h2>
+    </header>
+
+    <div class="tarjetas">
+      <article>
+        <div>💻</div>
+        <h3>Desarrollo Web</h3>
+        <p>Aplicaciones modernas y adaptables.</p>
+      </article>
+
+      <article>
+        <div>🎨</div>
+        <h3>Diseño UI/UX</h3>
+        <p>Interfaces centradas en las personas.</p>
+      </article>
+
+      <article>
+        <div>📈</div>
+        <h3>Transformación Digital</h3>
+        <p>Tecnología aplicada a procesos empresariales.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="contacto" id="contacto">
+    <div class="info">
+      <span>CONTACTO</span>
+      <h2>¿Tienes un proyecto?</h2>
+      <p>Déjanos tus datos y cuéntanos cómo podemos ayudarte.</p>
+      <ul>
+        <li>✓ Atención personalizada</li>
+        <li>✓ Diseño profesional</li>
+        <li>✓ Soluciones adaptables</li>
+      </ul>
+    </div>
+
+    <form id="formulario">
+      <div class="fila">
+        <div class="campo">
+          <label for="nombre">Nombre</label>
+          <input id="nombre" required>
+        </div>
+
+        <div class="campo">
+          <label for="empresa">Empresa</label>
+          <input id="empresa">
+        </div>
+      </div>
+
+      <div class="campo">
+        <label for="correo">Correo</label>
+        <input id="correo" type="email" required>
+      </div>
+
+      <div class="campo">
+        <label for="servicio">Servicio</label>
+        <select id="servicio" required>
+          <option value="">Seleccione</option>
+          <option>Desarrollo Web</option>
+          <option>Diseño UI/UX</option>
+          <option>Transformación Digital</option>
+        </select>
+      </div>
+
+      <div class="campo">
+        <label for="mensaje">Mensaje</label>
+        <textarea id="mensaje" rows="5" required></textarea>
+      </div>
+
+      <label class="politica">
+        <input type="checkbox" required>
+        Acepto el tratamiento de datos.
+      </label>
+
+      <button type="submit">Enviar solicitud</button>
+    </form>
+  </section>
+
+  <footer>
+    <strong>NEXA.</strong>
+    <p>© 2026 Nexa Digital</p>
+  </footer>
+
+  <script src="js/app.js" defer></script>
+</body>
+</html>

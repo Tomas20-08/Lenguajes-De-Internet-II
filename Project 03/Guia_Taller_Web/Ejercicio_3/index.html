@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Congreso Tecnológico</title>
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+  <div class="contenedor">
+    <div class="evento">
+      <aside class="informacion">
+        <span class="badge">EVENTO ACADÉMICO</span>
+        <h1>Congreso de Innovación y Tecnología</h1>
+        <p>Comparte conocimientos y conoce nuevas tendencias digitales.</p>
+
+        <div class="datos">
+          <p>📅 25 de octubre</p>
+          <p>📍 Auditorio principal</p>
+          <p>⏰ 8:00 a. m.</p>
+        </div>
+
+        <div id="contador" class="contador"></div>
+      </aside>
+
+      <section class="registro">
+        <h2>Inscripción</h2>
+        <p id="preferencia"></p>
+
+        <form id="formulario">
+          <div class="fila">
+            <div class="campo">
+              <label for="nombre">Nombre</label>
+              <input id="nombre" required>
+            </div>
+
+            <div class="campo">
+              <label for="apellido">Apellido</label>
+              <input id="apellido" required>
+            </div>
+          </div>
+
+          <div class="campo">
+            <label for="correo">Correo</label>
+            <input id="correo" type="email" required>
+          </div>
+
+          <div class="campo">
+            <label for="tema">Tema de interés</label>
+            <select id="tema" required>
+              <option value="">Seleccione</option>
+              <option>Inteligencia Artificial</option>
+              <option>Desarrollo Web</option>
+              <option>Ciberseguridad</option>
+            </select>
+          </div>
+
+          <div class="campo">
+            <span class="titulo">Modalidad</span>
+            <div class="opciones">
+              <label>
+                <input type="radio" name="modalidad" value="Presencial" required>
+                Presencial
+              </label>
+              <label>
+                <input type="radio" name="modalidad" value="Virtual">
+                Virtual
+              </label>
+            </div>
+          </div>
+
+          <div class="campo">
+            <label for="mensaje">Expectativas</label>
+            <textarea id="mensaje" rows="4"></textarea>
+          </div>
+
+          <label class="terminos">
+            <input type="checkbox" required>
+            Acepto las condiciones.
+          </label>
+
+          <button type="submit">Inscribirme</button>
+        </form>
+      </section>
+    </div>
+  </div>
+
+  <script src="js/app.js" defer></script>
+</body>
+</html>

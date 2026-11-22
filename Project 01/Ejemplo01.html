@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+ 
+    <meta name="viewport"
+
+          content="width=device-width, initial-scale=1.0">
+ 
+    <meta name="description"
+
+          content="Ejemplo de almacenamiento de información utilizando cookies">
+ 
+    <title>Ejemplo 1 - Cookies</title>
+ 
+    <style>
+
+        body {
+
+            font-family: Arial, sans-serif;
+
+            max-width: 600px;
+
+            margin: 50px auto;
+
+            padding: 20px;
+
+            background-color: #f4f6f8;
+
+        }
+ 
+        .contenedor {
+
+            background: white;
+
+            padding: 25px;
+
+            border-radius: 10px;
+
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+        }
+ 
+        input {
+
+            width: 100%;
+
+            box-sizing: border-box;
+
+            padding: 10px;
+
+            margin-bottom: 10px;
+
+        }
+ 
+        button {
+
+            padding: 10px 15px;
+
+            cursor: pointer;
+
+            background-color: #1565c0;
+
+            color: white;
+
+            border: none;
+
+            border-radius: 5px;
+
+        }
+ 
+        #mensaje {
+
+            margin-top: 20px;
+
+            font-weight: bold;
+
+        }
+</style>
+</head>
+ 
+<body>
+ 
+<div class="contenedor">
+ 
+    <h1>Guardar nombre</h1>
+ 
+    <label for="nombre">Ingrese su nombre:</label>
+ 
+    <input
+
+        type="text"
+
+        id="nombre"
+
+        placeholder="Ejemplo: Carlos"
+>
+ 
+    <button onclick="guardarNombre()">
+
+        Guardar nombre
+</button>
+ 
+    <p id="mensaje"></p>
+ 
+</div>
+ 
+<script>
+ 
+    function guardarNombre() {
+ 
+        const nombre =
+
+            document.getElementById("nombre").value.trim();
+ 
+        if (nombre === "") {
+
+            alert("Debe escribir un nombre.");
+
+            return;
+
+        }
+ 
+        document.cookie =
+
+            "nombreUsuario=" +
+
+            encodeURIComponent(nombre) +
+
+            "; max-age=86400; path=/; SameSite=Lax";
+ 
+        mostrarNombre();
+
+    }
+ 
+ 
+    function obtenerCookie(nombreCookie) {
+ 
+        const cookies = document.cookie.split(";");
+ 
+        for (const cookie of cookies) {
+ 
+            const partes = cookie.trim().split("=");
+ 
+            const nombre = partes.shift();
+ 
+            const valor = partes.join("=");
+ 
+            if (nombre === nombreCookie) {
+
+                return decodeURIComponent(valor);
+
+            }
+
+        }
+ 
+        return null;
+
+    }
+ 
+ 
+    function mostrarNombre() {
+ 
+        const nombre =
+
+            obtenerCookie("nombreUsuario");
+ 
+        const mensaje =
+
+            document.getElementById("mensaje");
+ 
+        if (nombre) {
+ 
+            mensaje.textContent =
+
+                "Bienvenido nuevamente, " + nombre + ".";
+ 
+        } else {
+ 
+            mensaje.textContent =
+
+                "Todavía no hay un nombre almacenado.";
+
+        }
+
+    }
+ 
+ 
+    mostrarNombre();
+ 
+</script>
+ 
+</body>
+</html>
+ 

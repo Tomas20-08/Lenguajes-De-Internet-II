@@ -1,0 +1,182 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --oscuro: #111827;
+  --gris: #6b7280;
+  --borde: #e5e7eb;
+  --fondo: #f3f4f6;
+  --naranja: #f97316;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--oscuro);
+  background: var(--fondo);
+}
+
+.barra {
+  min-height: 70px;
+  padding: 15px max(20px, calc((100% - 1100px) / 2));
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  background: var(--oscuro);
+}
+
+.barra strong {
+  font-size: 21px;
+}
+
+.barra p {
+  color: #cbd5e1;
+}
+
+main {
+  width: min(1100px, calc(100% - 40px));
+  margin: 45px auto;
+}
+
+.cabecera {
+  margin-bottom: 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.cabecera > div > span {
+  color: var(--naranja);
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.cabecera h1 {
+  margin: 6px 0;
+  font-size: 36px;
+}
+
+#ultimo {
+  color: var(--gris);
+}
+
+.borrar {
+  padding: 11px 15px;
+  border: 1px solid #fed7aa;
+  border-radius: 9px;
+  color: #9a3412;
+  background: #fff7ed;
+  cursor: pointer;
+}
+
+form {
+  padding: 32px;
+  border-radius: 20px;
+  background: white;
+  box-shadow: 0 15px 40px rgba(17, 24, 39, 0.08);
+}
+
+.bloque {
+  padding-bottom: 28px;
+  margin-bottom: 28px;
+  border-bottom: 1px solid var(--borde);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.doble {
+  grid-column: span 2;
+}
+
+.campo {
+  margin-bottom: 18px;
+}
+
+.campo label,
+.titulo {
+  display: block;
+  margin-bottom: 7px;
+  font-weight: bold;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--borde);
+  border-radius: 9px;
+  font: inherit;
+  outline: none;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--naranja);
+  box-shadow: 0 0 0 4px rgba(249, 115, 22, 0.1);
+}
+
+.opciones,
+.destacado {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.opciones input,
+.destacado input {
+  width: auto;
+}
+
+.destacado {
+  margin: 20px 0;
+  padding: 14px;
+  border-radius: 10px;
+  background: #fff7ed;
+}
+
+.acciones {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.acciones button {
+  padding: 13px 24px;
+  border: 0;
+  border-radius: 9px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.principal {
+  color: white;
+  background: var(--naranja);
+}
+
+.secundario {
+  background: #e5e7eb;
+}
+
+@media (max-width: 750px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .doble {
+    grid-column: auto;
+  }
+
+  .cabecera {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}

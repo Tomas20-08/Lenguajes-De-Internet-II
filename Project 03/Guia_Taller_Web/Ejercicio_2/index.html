@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reserva de Biblioteca</title>
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+  <div class="pagina">
+    <section class="panel">
+      <header>
+        <span class="badge">BIBLIOTECA</span>
+        <h1>Reserva tu recurso</h1>
+        <p>Programa tu visita y selecciona los servicios que necesitas.</p>
+        <div id="preferencia"></div>
+      </header>
+
+      <form id="formulario">
+        <div class="campo">
+          <label for="nombre">Nombre</label>
+          <input id="nombre" required>
+        </div>
+
+        <div class="campo">
+          <label for="correo">Correo</label>
+          <input id="correo" type="email" required>
+        </div>
+
+        <div class="campo completo">
+          <label for="recurso">Tipo de recurso</label>
+          <select id="recurso" required>
+            <option value="">Seleccione</option>
+            <option value="Libro">Libro</option>
+            <option value="Computador">Computador</option>
+            <option value="Sala">Sala de estudio</option>
+            <option value="Audiovisual">Material audiovisual</option>
+          </select>
+        </div>
+
+        <div class="campo">
+          <label for="fecha">Fecha</label>
+          <input id="fecha" type="date" required>
+        </div>
+
+        <div class="campo">
+          <label for="hora">Hora</label>
+          <input id="hora" type="time" required>
+        </div>
+
+        <fieldset class="completo">
+          <legend>Tipo de consulta</legend>
+          <div class="opciones">
+            <label>
+              <input type="radio" name="consulta" required>
+              Individual
+            </label>
+            <label>
+              <input type="radio" name="consulta">
+              Grupal
+            </label>
+          </div>
+        </fieldset>
+
+        <div class="completo">
+          <p class="titulo">Servicios adicionales</p>
+          <div class="opciones">
+            <label>
+              <input type="checkbox">
+              Computador
+            </label>
+            <label>
+              <input type="checkbox">
+              Proyector
+            </label>
+            <label>
+              <input type="checkbox">
+              Conexión eléctrica
+            </label>
+          </div>
+        </div>
+
+        <div class="campo completo">
+          <label for="comentarios">Comentarios</label>
+          <textarea id="comentarios" rows="4"></textarea>
+        </div>
+
+        <button class="completo" type="submit">Confirmar reserva</button>
+      </form>
+    </section>
+  </div>
+
+  <script src="js/app.js" defer></script>
+</body>
+</html>

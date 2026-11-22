@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestión de Productos</title>
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+  <div class="barra">
+    <div>
+      <strong>SHOPADMIN</strong>
+      <p>Gestión de inventario</p>
+    </div>
+  </div>
+
+  <main>
+    <header class="cabecera">
+      <div>
+        <span>INVENTARIO</span>
+        <h1>Registrar producto</h1>
+        <p id="ultimo">Complete la información.</p>
+      </div>
+
+      <button id="borrarCookies" class="borrar" type="button">
+        Borrar preferencias
+      </button>
+    </header>
+
+    <form id="formulario">
+      <section class="bloque">
+        <h2>Información general</h2>
+        <div class="grid">
+          <div class="campo">
+            <label for="codigo">Código</label>
+            <input id="codigo" required>
+          </div>
+
+          <div class="campo doble">
+            <label for="producto">Producto</label>
+            <input id="producto" required>
+          </div>
+
+          <div class="campo">
+            <label for="categoria">Categoría</label>
+            <select id="categoria" required>
+              <option value="">Seleccione</option>
+              <option>Tecnología</option>
+              <option>Hogar</option>
+              <option>Oficina</option>
+              <option>Accesorios</option>
+            </select>
+          </div>
+
+          <div class="campo">
+            <label for="marca">Marca</label>
+            <input id="marca">
+          </div>
+
+          <div class="campo">
+            <label for="precio">Precio</label>
+            <input id="precio" type="number" min="0" required>
+          </div>
+
+          <div class="campo">
+            <label for="cantidad">Cantidad</label>
+            <input id="cantidad" type="number" min="0" required>
+          </div>
+        </div>
+      </section>
+
+      <section class="bloque">
+        <h2>Presentación</h2>
+        <div class="campo">
+          <label for="imagen">URL de imagen</label>
+          <input id="imagen" type="url">
+        </div>
+
+        <div class="campo">
+          <span class="titulo">Estado</span>
+          <div class="opciones">
+            <label>
+              <input type="radio" name="estado" required>
+              Activo
+            </label>
+            <label>
+              <input type="radio" name="estado">
+              Inactivo
+            </label>
+          </div>
+        </div>
+
+        <label class="destacado">
+          <input type="checkbox">
+          Producto destacado
+        </label>
+
+        <div class="campo">
+          <label for="descripcion">Descripción</label>
+          <textarea id="descripcion" rows="5" required></textarea>
+        </div>
+      </section>
+
+      <div class="acciones">
+        <button type="reset" class="secundario">Limpiar</button>
+        <button type="submit" class="principal">Guardar producto</button>
+      </div>
+    </form>
+  </main>
+
+  <script src="js/app.js" defer></script>
+</body>
+</html>

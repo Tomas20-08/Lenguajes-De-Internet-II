@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+ 
+<head>
+ 
+    <meta charset="UTF-8">
+ 
+    <meta name="viewport"
+
+          content="width=device-width, initial-scale=1.0">
+ 
+    <meta name="description"
+
+          content="Ejemplo de selección de tema utilizando cookies">
+ 
+    <meta name="author"
+
+          content="Estudiante">
+ 
+    <title>
+
+        Ejemplo 2 - Tema con Cookie
+</title>
+ 
+    <style>
+ 
+        body {
+
+            font-family: Arial, sans-serif;
+
+            text-align: center;
+
+            padding-top: 80px;
+
+            transition:
+
+                background-color 0.3s,
+
+                color 0.3s;
+
+        }
+ 
+        body.claro {
+
+            background-color: white;
+
+            color: #222;
+
+        }
+ 
+        body.oscuro {
+
+            background-color: #1f1f1f;
+
+            color: white;
+
+        }
+ 
+        button {
+
+            margin: 5px;
+
+            padding: 12px 20px;
+
+            border: none;
+
+            border-radius: 5px;
+
+            cursor: pointer;
+
+        }
+ 
+    </style>
+ 
+</head>
+ 
+<body>
+ 
+<h1>Seleccione un tema</h1>
+ 
+<button onclick="cambiarTema('claro')">
+
+    Tema claro
+</button>
+ 
+<button onclick="cambiarTema('oscuro')">
+
+    Tema oscuro
+</button>
+ 
+<p id="estado"></p>
+ 
+<script>
+ 
+    function cambiarTema(tema) {
+ 
+        document.body.className = tema;
+ 
+        document.cookie =
+
+            "tema=" +
+
+            tema +
+
+            "; max-age=604800; path=/; SameSite=Lax";
+ 
+        document.getElementById("estado")
+
+            .textContent =
+
+            "Tema seleccionado: " + tema;
+
+    }
+ 
+ 
+    function obtenerTema() {
+ 
+        const cookies =
+
+            document.cookie.split(";");
+ 
+        for (const cookie of cookies) {
+ 
+            const [nombre, valor] =
+
+                cookie.trim().split("=");
+ 
+            if (nombre === "tema") {
+
+                return valor;
+
+            }
+
+        }
+ 
+        return "claro";
+
+    }
+ 
+ 
+    const temaGuardado =
+
+        obtenerTema();
+ 
+    cambiarTema(temaGuardado);
+ 
+</script>
+ 
+</body>
+</html>
+ 
